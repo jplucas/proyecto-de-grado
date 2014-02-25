@@ -3,7 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
 \usepackage{graphicx}
-\graphicspath{{imagenes/pdf/}{imagenes/jpg/}}
+\graphicspath{{images/pdf/}{images/jpg/}}
 
 \title{Gobernanza de servicios en la plataforma de interoperabilidad de gobierno electrónico}
 \author{Arian Bessonart, Juan Pablo Lucas, Miguel Renom\thanks{Tutores: Laura González, Guzmán Llambías}}
@@ -19,16 +19,14 @@
 	\pagebreak
 
 	\section{Introducción}
-		\subsection{Introducción a la gobernanza en SOA}
-			La necesidad de las organizaciones de implementar sus propias arquitecturas orientadas a servicios (SOA, por sus siglas en Inglés) ha traído aparejada la necesidad de llevar a cabo esta implementación de forma controlada, aplicando una serie de criterios establecidos de forma uniforme a lo largo de todo el proyecto de adopción y mantenimiento de la arquitectura.
+		\subsection{Acerca de la gobernanza en SOA}
+			Cuando una organización se plantea la implementación de una arquitectura orientada a servicios (SOA, por sus siglas en Inglés), una de las metas clave en el proyecto es el retorno de inversión positivo. Con el fin de asistir al alcance de dichas metas es que las organizaciones implementan sistemas de gobernanza sobre las arquitecturas.
 
-			La \emph{gobernanza en SOA} es un sistema de gobernanza aplicado a la gestión de SOA. La misma establece la forma en que la adopción de una SOA será llevada a cabo dentro de una organización.
+			La \emph{gobernanza en SOA}, provee las herramientas que asisten a la ejecución de la administración de una SOA, brindando las reglas para la toma de decisiones, estableciendo los procesos necesarios, definiendo los roles que forman parte del sistema administrativo y estableciendo las métricas que determinan el ajuste de la toma de decisiones a las reglas establecidas. La gobernanza no dice cuándo ni cómo tomar una decisión; determina quién debería hacerlo y establece los límites para esa persona o grupo. \cite{Erl:2011:SGG:1983453}
 
-			Varios autores utilizan distintos conceptos en sus publicaciones acerca de SOA y gobernanza en SOA. En este informe se toma como referencia el \emph{framework} y la terminología propuestas en \cite{Erl:2011:SGG:1983453}.
+			De entre las varias publicaciones abordando la gobernanza en SOA, en este informe se toma como referencia el \emph{framework} y la terminología propuestas en \cite{Erl:2011:SGG:1983453}.
 
-		\subsection{Ciclo de vida del proyecto}
-			En forma general, un proyecto SOA comienza con un plan de adopción. En este se abordan temáticas relacionadas a alcance del proyecto (qué servicios), metas (a corto, mediano y largo plazo), tiempos de ejecución, sistema de gobernanza, forma de financiación, entre otros.
-
+		\subsection{Proyecto SOA}
 			\begin{figure}[h]
 			    \centering
 			    \includegraphics[width=\linewidth]{ciclo_de_vida_del_proyecto}
@@ -37,29 +35,66 @@
 			\end{figure}
 
 
-			Las etapas que siguen a la adopción se muestran en la figura \ref{figura:ciclo_de_vida_del_proyecto}. Estas no solo representan las etapas del proyecto sino que también conforman el ciclo de vida de todos los servicios gobernados. El éxito de una etapa dependerá en gran medida del esfuerzo dedicado en las etapas anteriores, ya que estas servirán de base para la misma: un esfuerzo limitado en las etapas de análisis, puede traer acarreados costos por imprevistos en la etapa de desarrollo o mantenimiento.
+			Todo proyecto SOA comienza con un plan de adopción. En este se abordan temáticas tales como el alcance del proyecto (qué servicios), metas, tiempos de ejecución, sistema de gobernanza, forma de financiación, entre otros.
 
-			El \emph{análisis de inventarios de servicios} tiene el cometido de definir «blueprints» o cianotipos, los cual describen las características de un conjunto de servicios pertenecientes al inventario. Cada inventario representa una colección de servicios independientemente estandarizados y gobernados \cite{Erl:2011:SGG:1983453}. En un caso ideal, los inventarios están relacionados directamente con algún \emph{dominio} o línea de negocios de la organización; estos dominios (cuando son más de uno) están a cargo de un propietario dentro de la organización, quien los gobierna. En grandes proyectos, la cantidad de dominios y propietarios —y la relación existente entre ellos— puede resultar propicia para establecer una jerarquía de gobernanza de servicios que permita establecer criterios de adecuados para cada dominio, y a la vez alineados con los objetivos generales de gobernanza del proyecto SOA. Para ello, el framework deriva la responsabilidad sobre un dominio a la \emph{oficina del programa de gobernanza en SOA} (SGPO, por sus siglas en Inglés).
+			La figura \ref{figura:ciclo_de_vida_del_proyecto} muestra las etapas comunes de un proyecto SOA las cuales son también etapas del \emph{ciclo de vida} de los servicios.
 
-			Una SGPO es un área encargada de uno o más dominios de servicios dentro de la organización. Varias SGPO se pueden organizar en diferentes modelos de jurisdicción propuestos por el framework, enumerados a continuación:
+			En todo proyecto SOA, es de gran importancia el \emph{análisis por adelantado} para la identificación de los servicios. Un servicio pobremente analizado terminará por afectar las metas de la organización en cuanto a la SOA, especialmente en el aporte de valor y retorno de inversión a causa de este último.
 
-			\begin{description}
-				\item[SGPO Empresarial] única SGPO encargada de un único dominio de servicios de la organización
-				\item[SGPO central con múltiples dominios] distintos dominios estandarizados son abarcados por un único sistema de gobernanza dirigido por una SGPO central
-				\item[Federado con SGPO para cada dominio] varias SGPO responsables de un dominio cada una donde llevan a cabo su propio sistema de gobernanza, el cual debe cumplir con lineamientos introducidos por una SGPO central.
-				\item[Independiente] SGPO individuales responsables de un dominio cada una donde aplican el sistema de gobernanza en forma independiente.
+			El \emph{análisis de inventarios de servicios} tiene el cometido de definir «blueprints» o planos (cianotipos), los cuales describen las características de un conjunto de servicios pertenecientes a dicho inventario.
 
-			\end{description}
+			\begin{quote}
+				``Un inventario representa una colección de servicios independientemente estandarizados y gobernados''. \cite{Erl:2011:SGG:1983453}
+			\end{quote}
 
-			Para todo el análisis y propuesta se toma como ejemplo a la \textsc{Dirección nacional de identificación civil (DNIC)}.
+			Retomando aquí la importancia del análisis, un mayor esfuerzo en el análisis por adelantado lleva a un cianotipo de inventario de servicios mejor definido, el cual está destinado a la creación de servicios de mayor calidad. Un menor esfuerzo por adelantado lleva a cianotipos parcial o pobremente definidos. \cite{Erl:2011:SGG:1983453}
+
+			En un caso ideal, los inventarios están relacionados directamente con algún \emph{dominio} o línea de negocios de la organización; estos dominios —cuando son más de uno— están a cargo de un propietario dentro de la organización, quien los gobierna. En grandes proyectos, la cantidad de dominios y propietarios —y la relación existente entre ellos— puede resultar propicia para establecer una jerarquía de gobernanza de servicios que permita establecer criterios de adecuados para cada dominio, y a la vez, alineados con los objetivos generales de gobernanza del proyecto SOA. Para ello, el framework deriva la responsabilidad sobre un dominio a la \emph{oficina del programa de gobernanza en SOA} (SGPO, por sus siglas en Inglés).
+
+
+			Una SGPO es un área encargada de uno o más dominios de servicios dentro de la organización. En una organización dada, múltiples SGPO pueden coexistir en base a los dominios identificados y sus propietarios. En el cuadro \ref{tabla:modelos_sgpo} se listan los diferentes modelos de jurisdicción de SGPO que se pueden aplicar a una organización.
+
+			\begin{table}[h]
+				\begin{tabular}{p{0.25\linewidth} | p{0.75\linewidth}}
+					\textbf{Tipo} & \textbf{Descripción} \\
+					\hline
+					SGPO empresarial centralizada & Única SGPO encargada de un único dominio de servicios de la organización\\
+					\hline
+					SGPO con dominios centralizados & Distintos dominios estandarizados son abarcados por un único sistema de gobernanza dirigido por una SGPO central.\\
+					\hline
+					SGPO con dominios federados & Varias SGPO responsables de un dominio cada una donde llevan a cabo su propio sistema de gobernanza, el cual debe cumplir con lineamientos introducidos por una SGPO central\\
+					\hline
+					SGPO con dominios independientes & SGPO individuales responsables de un dominio cada una donde aplican el sistema de gobernanza en forma independiente.\\
+					\hline
+				\end{tabular}
+				\caption{Modelos de jurisdicción de SGPO}
+			    \label{tabla:modelos_sgpo}
+			\end{table}
+
+			\begin{figure}[h]
+			    \centering
+			    \includegraphics[width=\linewidth]{modelos_sgpo}
+			    \caption{Representación gráfica de modelos de jurisdicción de SGPO}
+			    \label{imagen:modelos_sgpo}
+			\end{figure}
+
+			La figura \ref{imagen:modelos_sgpo} contiene una representación gráfica de los modelos introducidos en el cuadro \ref{tabla:modelos_sgpo}.
+
+			En esta introducción se intenta cubrir los aspectos fundamentales de un proyecto SOA y su sistema de gobernanza. En la sección \ref{sec:anexo1} se puede leer una descripción extendida acerca de las etapas comunes de un proyecto SOA, siguiendo los lineamientos del texto de base.
+
+
+			El contenido de este informe es una propuesta de solución para la gobernanza en SOA de la \emph{plataforma de interoperabilidad} (PDI) de gobierno electrónico que es actualmente administrada por la \textsc{Agencia para el Desarrollo del Gobierno de Gestión Electrónica y la Sociedad de la Información y del Conocimiento (AGESIC)}, perteneciente al gobierno del estado uruguayo.
+
+			La estructura comienza con un análisis de la realidad de AGESIC en la que se describe el estado actual de la SOA aplicada en la PDI, el sistema de gobernanza actual y los procesos y roles involucrados. Al final del análisis se describen las necesidades identificadas que sirven como punto de partida para la solución propuesta, la cual se desarrolla en la sección que sigue. % Continuar la descripción cuando esté concluido el informe
 
 	\section{Análisis de la realidad de AGESIC}
 		% Agregar análisis de la realidad aquí.
 
 	\section{Propuesta}
 		\subsection{Introducción}
-			De las conclusiones del análisis de la realidad se desprende la imposibilidad de AGESIC para influir en la definición de inventarios de servicios, por lo que determinaremos los inventarios existentes sobre los que aplicar la gobernanza a partir de los proveedores de estos servicios: cada inventario abarcará únicamente a los servicios de un mismo proveedor.
+			De las conclusiones del análisis de la realidad se desprende la capacidad limitada de AGESIC para influir en la definición de inventarios de servicios, por lo que determinaremos los inventarios existentes sobre los que aplicar la gobernanza a partir de los proveedores de estos servicios: cada inventario abarcará únicamente a los servicios de un mismo proveedor.
 
+			Para todo el análisis y propuesta se toma como ejemplo a la \textsc{Dirección nacional de identificación civil (DNIC)}.
 			Un ejemplo de esto puede ser un inventario que contiene a todos los servicios publicados por la \emph{DNIC}.
 
 			Por la naturaleza propia de las responsabilidades en la gestión del ciclo de vida de los servicios, la propuesta de gobernanza se basará en una jurisdicción de dominio SGPO federado (Federated Domain SGPO). La SGPO central (AGESIC) establecerá las políticas y normas básicas que deberán cumplir los inventarios –y por tanto, los servicios que estos incluyan–, a la vez que cada organismo se encarga de ejercer la gobernanza sobre sus propios servicios. Si bien esta es una representación bastante acertada, no sigue del todo al modelo del framework.
@@ -136,6 +171,7 @@
 
 	\section{Anexos}
 		\subsection{Anexo I: Una breve descripción sobre las etapas del ciclo de vida que ocurren únicamente en los organismos}
+			\label{sec:anexo1}
 			El \emph{análisis de inventario de servicios} implica definir un grupo de entidades y procesos de negocio que permitan establecer una estructura básica para los servicios contenidos dentro del inventario (\emph{service blueprints}), de modo que estos no se superpongan entre sí y trabajen en conjunto de forma óptima para los procesos que abarca dicho inventario. El éxito de esta etapa requiere de conocimiento sobre el y/o los negocios de la organización.
 
 			Un \emph{análisis orientado a servicio} es la primer etapa en la definición de servicios individuales. Esta etapa contribuye a los service blueprints y tiene como objetivo la identificación de distintos tipos de servicios dentro de el o los inventarios definidos.
