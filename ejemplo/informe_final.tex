@@ -1,0 +1,43 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{longtable}
+\usepackage[spanish]{babel}
+\usepackage{natbib}
+\usepackage{comment}
+
+\usepackage{url} 
+\newcommand {\makerow}[2]{
+   \textbf{#1} & #2 \\ \hline
+}
+\usepackage{hyperref}
+\usepackage{slashbox}
+
+%\usepackage[pdftex]{graphicx}
+
+%hyperref no color
+\hypersetup{
+  colorlinks,%
+  citecolor=black,%
+  filecolor=black,%
+  linkcolor=black,%
+  urlcolor=black
+}
+
+  
+\begin{document}
+
+\pagestyle{plain}
+\pagenumbering{arabic} 
+\tableofcontents
+
+\include{capitulo1}
+\include{capitulo2}
+\include{capitulo3}
+\include{capitulo4}
+\include{capitulo5}
+\include{capitulo6}
+\bibliographystyle{plain}
+\bibliography{biblio}
+\end{document}
