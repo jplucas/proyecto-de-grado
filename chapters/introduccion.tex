@@ -1,0 +1,60 @@
+\chapter{Introducción}
+\label{Introduccion}
+La Agencia de Gobierno Electrónico y Sociedad de la Información y del Conocimiento (AGESIC) es una institución del estado que tiene como misión liderar la estrategia de implementación del Gobierno Electrónico(GE) del país, como base de un Estado eficiente y centrado en el ciudadano promoviendo un buen uso de las tecnologías de la información y la comunicación \cite{AGESIC:MisionYVision}.
+Agesic es la responsable de crear una Plataforma de Interoperabilidad (PDI) como parte de la Plataforma de Gobierno Electrónico (PGE) de forma de cumplir con el objetivo de facilitar y promover la implementación de servicios de GE en Uruguay.
+Para esto, la PDI brinda mecanismos que apuntan a simplificar la integración entre los organismos del Estado y a posibilitar un mejor aprovechamiento de sus activos.
+
+La PDI provee infraestructura (hardware y software) y servicios utilitarios, que reducen la complejidad de implementar servicios al público y/o accesibles dentro del Estado. Asimismo, la PDI aporta los mecanismos técnicos idóneos para implementar servicios compuestos, basados en los ofrecidos por diferentes organismos, normalizando e integrando la información proveniente de éstos.
+A nivel tecnológico, la PDI posibilita que los organismos provean sus funcionalidades de negocio a través de servicios de software de forma independiente a la plataforma en la que fueron implementados. Esto corresponde a la implementación de una SOA a nivel del Estado, en la cual los servicios ofrecidos por los organismos son descriptos, publicados y descubiertos, invocados y combinados a través de interfaces y protocolos estandarizados.
+De esta forma, al facilitarse la reutilización de servicios, se promueve la construcción de nuevos servicios en base a otros ya existentes, reduciéndose los tiempos de implementación de nuevos requerimientos. Por otro lado, el “acoplamiento débil” entre servicios promovido por la SOA, permite la evolución autónoma de los servicios de software implementados en los organismos.\citep{AGESIC:PDI}
+
+
+\emph{Extraido de versión anterior. Remover.}
+La motivación de este proyecto es una propuesta de solución de gobernanza en SOA para la \emph{plataforma de interoperabilidad} (PDI) de gobierno electrónico que es actualmente administrada por la \textsc{Agencia para el Desarrollo del Gobierno de Gestión Electrónica y la Sociedad de la Información y del Conocimiento (AGESIC)}, ente perteneciente al gobierno del estado uruguayo.
+
+Dicha plataforma tiene el objetivo de concentrar a todas las SOA distribuidas en los organismos del estado, formando una única plataforma nacional de acceso a servicios web estatales.
+
+Este informe comienza con un análisis de la realidad de AGESIC en la que se describe el sistema de gobernanza actual aplicado sobre la jurisdicción de la agencia en cuanto a la PDI, su arquitectura y las SOA de los entes y organismos que participan en ella publicando sus servicios. Partiendo de las conclusiones del análisis, se elabora una propuesta acorde a las características de funcionamiento de la agencia, abarcando las necesidades y mejoras identificadas.
+Se incluyen además el análisis de herramientas de software para la asistencia a la gobernanza, ejemplos de uso y la descripción de un prototipo elaborado para este proyecto sobre un catálogo público de servicios.
+El informe finaliza con conclusiones de los autores sobre el proyecto, la identificación de aspectos a mejorar y posibles extensiones al proyecto.
+\emph{Extraido de versión anterior. Remover.}
+
+
+
+\section{Motivación}
+\label{Introduccion:Motivacion}
+
+\section{Objetivos}
+\label{Introduccion:Objetivos}
+
+\subsection{Objetivos Generales}
+\label{Introduccion:Objetivos_Generales}
+El objetivo general del proyecto, es proponer soluciones que mejoren la gobernanza de servicios en la plataforma de interoperabilidad del estado uruguayo.
+
+Se busca desarrollar las cuestiones relacionadas al ciclo de vida de los servicios, poniendo énfasis en el versionado y monitoreo de los mismos.
+\subsection{Objetivos Específicos}
+\label{Introduccion:Objetivos_Especificos}
+Los objetivos específicos de este proyecto son:
+\begin{enumerate}
+
+  \item Adaptación de los procesos de gobernanza en SOA a la realidad de AGESIC.
+  \item Definición del ciclo de vida de un servicio, en especial las etapas de monitoreo y versionado.
+  \item Definición de un modelo de calidad ajustado a la realidad de AGESIC, poniendo especial énfasis en un subconjunto de factores.
+  \item Propuesta de mejora del catálogo de servicios existente.
+  \item Prototipo de software para la gobernanza de servicios que permita validar la propuesta del proyecto.
+  \item Un prototipo de uso de middleware para compatibilizar los cambios entre versiones de servicios.
+\end{enumerate}
+
+Con el primer punto buscamos definir los procesos llevados a cabo en AGESIC desde el punto de vista de la gobernanza en SOA. Para ello nos basaremos en la bibliografía existente, tomando etapas bien definidas y encontrando la concordancia con los procesos llevados a cabo en AGESIC en lo que respecta al ciclo de vida de un servicio.
+
+El segundo objetivo permite profundizar el ciclo de vida de los servicios; en especial, para este proyecto interesa hacer hincapié en las etapas de monitoreo y versionado, por tratarse de dos casos particulares que requieren atención en la actualidad.
+
+Con la implantación de un modelo de calidad se pretende poder monitorear distintos componentes que influyen en el rendimiento del sistema. A través de un conjunto de factores se podrán analizar el comportamiento del servicio y aplicar acciones acordes a la necesidad de cumplir con acuerdos de calidad previamente establecidos. Disponer de un modelo de calidad, da un mayor nivel de confianza a nuestros servicios ya que será de gran importancia poder mantener los niveles de calidad acordados en un SLA.
+
+Desde la participación de múltiples organismos estatales en la plataforma de interoperabilidad, surge la necesidad de organizar a los servicios disponibles en un catálogo que brinde información suficiente, presentada en una interfaz adecuada a las necesidades de quienes consultarán dicho catálogo.
+
+\section{Aportes}
+\label{Introduccion:Aportes}
+
+\section{Organizacion del documento}
+\label{Introduccion:Organizacion_del_documento}
