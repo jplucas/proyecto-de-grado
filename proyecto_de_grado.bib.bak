@@ -1,6 +1,15 @@
 % This file was created with JabRef 2.4.1.
 % Encoding: UTF-8
 
+@MISC{OASIS:def,
+  author = {Organization for the Advancement of Structured Information Standards},
+  title = {About OASIS},
+  year = {2014},
+  owner = {Juan Pablo},
+  timestamp = {2014.04.04},
+  url = {https://www.oasis-open.org/org}
+}
+
 @MISC{InCo:Seminario,
   author = {Instituto de Computación - Facultad de Ingeniería},
   title = {Calidad de Servicios Web},
@@ -38,6 +47,18 @@
   address = {Upper Saddle River, NJ, USA},
   edition = {1st},
   isbn = {0138156751, 9780138156756}
+}
+
+@PHDTHESIS{Tesis:LauraGonzalez:PlataformaESB,
+  author = {Laura González},
+  title = {Plataforma ESB Adaptativa para Sistemas Basados en Servicios},
+  school = {Instituto de Computación – Facultad de Ingeniería
+	
+	Universidad de la República},
+  year = {2011},
+  owner = {Juan Pablo},
+  timestamp = {2014.04.04},
+  url = {http://www.fing.edu.uy/~lauragon/tesis/tesis-laura-gonzalez-final.pdf}
 }
 
 @BOOK{Bool:QoSWS,
