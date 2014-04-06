@@ -65,6 +65,52 @@
 \section{Versionado}
 \label{MarcoConceptual:versionado}
 
-\section{Calidad}
+\section{Calidad en Servicios}
 \label{MarcoConceptual:calidad}
+La \emph{calidad de los servicios (QoS)} es un elemento importante que permite determinar el rendimiento, utilidad y facilidad de uso de los mismos, entre otros factores.
+Se utiliza normalmente para describir las características no funcionales de los web services y como criterio para la evaluación de los diferentes web services.
+Cada servicio debe cumplir con un contrato escrito entre el proveedor del mismo y el cliente, donde se define un \emph{acuerdo de nivel de servicio (SLA)} en el cual el proveedor debe respetar todos los criterios de calidad que se compromete a cumplir. \cite{Bool:QoSWS}
 
+\subsection{Metamodelo de calidad}
+\label{MarcoConceptual:metamodelo_calidad}
+Un metamodelo de calidad permite definir distintos niveles para evaluar la calidad de un servicio. El metamodelo básico es \emph{"Quality Abstract"} que contiene la siguiente estructura.  \cite{InCo:Seminario}
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5cm]{metamodelo_de_calidad}
+    \caption{Metamodelo Abstracto de Calidad}
+    \label{figura:metamodelo_de_calidad}
+  \end{figure}
+
+La figura \ref{figura:metamodelo_de_calidad} nos indican los siguientes niveles.
+
+			\begin{enumerate}
+				\item Dimensión: Es el aspecto de la calidad correspondiente a la perspectiva que brinda el mayor nivel de abstracción de la misma \cite{InCo:Seminario}.
+				\item Factor: Se ubica en el nivel inmediato inferior a la dimension por lo que corresponde a un aspecto particular de la dimension de la calidad. Un factor pude ser mas adecuado que otro para algún tipo de problema o aplicación que se este analizando.
+				\item Métrica: La métrica corresponde a un instrumento que define una forma de medir un factor de calidad.\cite{InCo:Seminario}Puede haber diferentes métricas para el mismo factor, las cuales miden el factor desde diferentes puntos de vista. Consta de tres elementos que tienen que estar bien definidos
+				\begin{enumerate}
+				\item Semántica (define como se mide la métrica, le da significado)
+				\item Unidad de medida (es la cantidad en términos de magnitud o porcentaje)
+				\item Granularidad de la medida (especificidad a la que se define un nivel de detalle)
+				\end{enumerate}
+				\item Método: El método corresponde al proceso por el cual se implementa la métrica. Puede haber más de un método que implemente la misma métrica. La implementación del método depende del dominio de la aplicación en concreto y de aspectos de bajo nivel como pueden ser la estructura de datos que es objeto de estudio.
+			\end{enumerate}
+
+
+\subsection{Modelos de Calidad}
+\label{MarcoConceptual:modelos_calidad}
+Un \emph{modelo de calidad} es el resultado de desarrollar un metamodelo como el visto en la sección anterior. Es aquí donde se definen los factores de calidad que son de interés monitorear su comportamiento para cada servicio. Existen varios enfoques interesantes al definir un modelo, particularmente se analizará el Modelo de Calidad para Web Services de OASIS, el Modelo de calidad en base al proyecto S-Cube y los principales factores de calidad que son requeridos para apoyar la QoS por IBM.
+\subsubsection{Modelo OASIS}
+\label{MarcoConceptual:modelo_OASIS}
+\emph{OASIS (Organization for the Advancement of Structured Information Standards)} es una organización sin fines de lucro que conduce el desarrollo, unificación y adopción de estándares para la sociedad de información global. Ha producido muchos de los estándares hoy usados para web services \cite{OASIS:def}.Presenta un modelo conceptual que define la interacción entre las partes involucradas \emph{Actores de calidad (Quality Associates)}, \emph{Actividades de calidad (Quality Activities)} y \emph{Factores de calidad (Quality Factors)} para habilitar la calidad de servicio.
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{oasis_modelo}
+    \caption{Modelo de Calidad para Web Services OASIS}
+    \label{figura:oasis_modelo}
+  \end{figure}
+En la figura \ref{figura:oasis_modelo} se puede ver como ejemplo de aplicación del modelo que un consumidor y un proveedor de Web Services \emph{(actores de calidad)} pueden establecer un Acuerdo de Nivel de Servicio \emph{(actividad de calidad)}, que involucre el tiempo de respuesta y la disponibilidad de los servicios \emph{(factores de calidad)} \cite{Tesis:LauraGonzalez:PlataformaESB}.
+\subsubsection{Modelo S-Cube}
+\label{MarcoConceptual:modelo_SCube}
+
+\subsubsection{Modelo IBM}
+\label{MarcoConceptual:modelo_IBM}

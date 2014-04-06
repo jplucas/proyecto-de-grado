@@ -52,8 +52,9 @@
 @PHDTHESIS{Tesis:LauraGonzalez:PlataformaESB,
   author = {Laura González},
   title = {Plataforma ESB Adaptativa para Sistemas Basados en Servicios},
-  school = {Instituto de Computación – Facultad de Ingeniería - Universidad de
-	la República},
+  school = {Instituto de Computación – Facultad de Ingeniería
+	
+	Universidad de la República},
   year = {2011},
   owner = {Juan Pablo},
   timestamp = {2014.04.04},
