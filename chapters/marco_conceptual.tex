@@ -17,7 +17,7 @@ entre aplicaciones tecnológicamente heterogéneas y constituyen la tecnología 
 la implementación de una SOA\cite{WS:definiciones}.
   \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{arquitectura_ws}
+    \includegraphics[scale=1]{arquitectura_ws}
     \caption{Arquitectura básica de protocolos de Web Services}
     \label{figura:arquitectura_ws}
   \end{figure}
@@ -30,7 +30,7 @@ Description Discovery and Integration (UDDI) como se muestra en la figura \ref{f
 Los \emph{XML} pueden ser transformados a través de \emph{XSLT}.
   \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{xslt_resumen}
+    \includegraphics[scale=0.5]{xslt_resumen}
     \caption{Etapas de aplicación de un XSLT}
     \label{figura:xslt_resumen}
   \end{figure}
@@ -43,7 +43,7 @@ Los \emph{XML} pueden ser transformados a través de \emph{XSLT}.
 				\end{enumerate}
   \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{xslt_ejemplo}
+    \includegraphics[scale=0.5]{xslt_ejemplo}
     \caption{Estructura básica XSLT}
     \label{figura:xslt_ejemplo}
   \end{figure}	
@@ -55,7 +55,7 @@ Una hoja de estilo XSLT es un documento XML que contiene al menos las etiquetas 
 Dentro de la instrucción <xsl:stylesheet> se pueden encontrar los llamados elementos de alto nivel y las plantillas, como en el ejemplo siguiente \cite{XSLT:definiciones}:
   \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{xslt_ejemplo2}
+    \includegraphics[scale=0.5]{xslt_ejemplo2}
     \caption{Ejemplo básico XSLT}
     \label{figura:xslt_ejemplo2}
   \end{figure}
@@ -74,21 +74,21 @@ A través de un \emph{XML Schema} se establece la estructura detallada de los me
 \emph{Simple Object Access Protocol (SOAP)} es un formato de mensaje XML utilizado en interacciones de servicios web. Los mensajes SOAP habitualmente se envían sobre HTTP o JMS, pero se pueden utilizar otros protocolos. El uso de SOAP en un servicio web específico se describe mediante la definición WSDL. SOAP no pone restricciones sobre la semántica de los mensajes de intercambio, no se encarga de cuestiones de fiabilidad,integridad de los mensajes, transacciones, seguridad, etc \cite{WebServices:CCIA}.
   \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{mensaje_soap}
+    \includegraphics[scale=0.5]{mensaje_soap}
     \caption{estructura de un mensaje SOAP}
     \label{figura:mensaje_soap}
   \end{figure}
 En la figura \ref{figura:mensaje_soap} se puede observar la estructura de los mensajes SOAP. Consiste en un \emph{envelope} que contiene una cabecera \emph{(etiqueta <Header>)} que es un componente opcional que brinda la información sobre el mensaje a usar por la infraestructura del Web Services; y el otro componente es el cuerpo \emph{(etiqueta <Body>)} que es obligatorio donde contiene información específica a usar por las aplicaciones que usan o implementan el Web Services. Los extremos son responsables de acordar el formato de la información intercambiada y de generar y/o procesar su contenido \cite{WebServices:CCIA}.
   \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{ej_mensaje_soap}
+    \includegraphics[scale=0.5]{ej_mensaje_soap}
     \caption{Ejemplo de mensaje SOAP}
     \label{figura:ej_mensaje_soap}
   \end{figure}
 La figura \ref{figura:ej_mensaje_soap} es un ejemplo de un mensaje SOAP invocando a la operación \emph{busquedaProveedores} con los parámetros \emph{codigoPais, numeroDocumento, nombre y CodigoUsuario}.
   \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{ej_resp_mensaje_soap}
+    \includegraphics[scale=0.5]{ej_resp_mensaje_soap}
     \caption{Ejemplo de respuesta mensaje SOAP}
     \label{figura:ej_resp_mensaje_soap}
   \end{figure}
@@ -98,7 +98,7 @@ Como resultado de la invocación, se recibe un mensaje como representa la figura
 \emph{Web Services Description Language (WSDL)} permite describir los distintos métodos o funciones que están disponibles en un Web Services, con sus parámetros o argumentos que se les debe pasar y el tipo de dato que retornará la función como resultado, y las ubicaciones en donde puede accederse. Especifica la sintaxis y los mecanismos de intercambio de mensajes \cite{WSDL:W3C}. \emph{WSDL} es es un lenguaje de definición de interfaces basado en XML que permite describir de forma estándar a los Web Services \cite{Tesis:LauraGonzalez:PlataformaESB} y representa una especie de contrato entre el proveedor y el que solicita. 
   \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{estructura_wsdl}
+    \includegraphics[scale=0.5]{estructura_wsdl}
     \caption{Estructura WSDL}
     \label{figura:estructura_wsdl}
   \end{figure}
@@ -128,7 +128,7 @@ de forma rápida, sencilla y dinámica a través de Internet \cite{UDDI:def}.
 
   \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{ciclo_de_vida_del_proyecto}
+    \includegraphics[scale=0.5]{ciclo_de_vida_del_proyecto}
     \caption{Etapas comunes de un proyecto SOA}
     \label{figura:ciclo_de_vida_del_proyecto}
   \end{figure}
@@ -172,7 +172,7 @@ de forma rápida, sencilla y dinámica a través de Internet \cite{UDDI:def}.
 
   \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{modelos_sgpo}
+    \includegraphics[scale=0.5]{modelos_sgpo}
     \caption{Representación gráfica de modelos de jurisdicción de SGPO \cite{Erl:2011:SGG:1983453}}
     \label{imagen:modelos_sgpo}
   \end{figure}
@@ -193,7 +193,7 @@ Cada servicio debe cumplir con un contrato escrito entre el proveedor del mismo 
 Un metamodelo de calidad permite definir distintos niveles para evaluar la calidad de un servicio. El metamodelo básico es \emph{"Quality Abstract"} que contiene la siguiente estructura.  \cite{InCo:Seminario}
   \begin{figure}[h]
     \centering
-    \includegraphics[width=0.5cm]{metamodelo_de_calidad}
+    \includegraphics[scale=0.8]{metamodelo_de_calidad}
     \caption{Metamodelo Abstracto de Calidad}
     \label{figura:metamodelo_de_calidad}
   \end{figure}
@@ -221,7 +221,7 @@ Un \emph{modelo de calidad} es el resultado de desarrollar un metamodelo como el
 \emph{OASIS (Organization for the Advancement of Structured Information Standards)} es una organización sin fines de lucro que conduce el desarrollo, unificación y adopción de estándares para la sociedad de información global. Ha producido muchos de los estándares hoy usados para web services \cite{OASIS:def}.Presenta un modelo conceptual que define la interacción entre las partes involucradas \emph{Actores de calidad (Quality Associates)}, \emph{Actividades de calidad (Quality Activities)} y \emph{Factores de calidad (Quality Factors)} para habilitar la calidad de servicio.
   \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{oasis_modelo}
+    \includegraphics[scale=1]{oasis_modelo}
     \caption{Modelo Conceptual de Calidad para Web Services OASIS}
     \label{figura:oasis_modelo}
   \end{figure}
@@ -229,7 +229,7 @@ En la figura \ref{figura:oasis_modelo} se muestra el modelo conceptual de OASIS.
 Al realizar un mapeo con el metamodelo abstracto de calidad visto en la sección \ref{MarcoConceptual:modelo_OASIS}, vemos en la figura \ref{figura:metamodelo_de_calidad} la agrupación del modelo propuesto por OASIS en la estructura Dimensión - Factor - Métrica \cite{Articulo:LauraGonzalez:CalidadWS}.
   \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{metamodelo_OASIS}
+    \includegraphics[scale=1]{metamodelo_OASIS}
     \caption{Metamodelo de Calidad propuesto por OASIS}
     \label{figura:metamodelo_OASIS}
   \end{figure}
@@ -240,7 +240,7 @@ En el Anexo se describen cada una de las métricas del modelo.
 S-Cube es un proyecto Europeo que define  principios, técnicas y métodos  para asegurar la calidad de los servicios. Diseñó un modelo de calidad para sistemas basados en servicios seleccionado distintos modelos de diferentes disciplinas, seleccionando los atributos de calidad relevante para los asegurar la calidad en los servicios \cite{Scube}.
   \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{modelo_Scube}
+    \includegraphics[scale=1]{modelo_Scube}
     \caption{Modelo de Calidad S-Cube}
     \label{figura:modelo_Scube}
   \end{figure}
@@ -252,7 +252,7 @@ En el Anexo se describen cada una de las métricas del modelo.
 \emph{International Business Machines (IBM)} es una empresa multinacional estadounidense de tecnología y consultoria. IBM fabrica y comercializa hardware y software para computadoras, y ofrece servicios de infraestructura, alojamiento de Internet, y consultoría en una amplia gama de áreas relacionadas con la informática. Con la evolución de los Web Services, IBM analiza los principales requisitos de calidad que se deben monitorear en los servicios \cite{IBM:QoS}.
   \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{modeloIBM}
+    \includegraphics[scale=1]{modeloIBM}
     \caption{Modelo de calidad IBM}
     \label{figura:modelo_IBM}
   \end{figure}
