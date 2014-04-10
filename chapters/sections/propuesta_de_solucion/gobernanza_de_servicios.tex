@@ -1,46 +1,50 @@
 \section{Gobernanza}
   \label{Solucion:Gobernanza}
 
+  Esta propuesta se divide en dos aspectos de la gobernanza: el \emph{modelo de jurisdicción} a aplicar y el \emph{ciclo de vida} o proceso de servicios introducidos en la PDI.
+
   \subsection{Modelo de jurisdicción}
     \label{Solucion:Gobernanza:ModeloJurisdiccion}
-    De las conclusiones del análisis de la realidad se desprende la capacidad limitada de AGESIC para influir en el análisis y definición de inventarios de servicios, dado que las etapas iniciales suceden en los organismos en forma independiente. Considerar una opción agresiva en la cual los organismos debieran consultar con AGESIC constantemente durante el diseño de servicios, podría afectar negativamente al proceso de creación de los mismos en cada organismo por separado, y esto además, sin tener en cuenta la capacidad de esfuerzo con la que cuenta la agencia al momento de aplicar este protocolo. Por otro lado, dado que la información manipulada por cada organismo es propiedad exclusiva de estos, y cualquier intercambio de información ocurrirá con previa autorización legal, se puede asumir que ningún organismo publicará información de otro a través de sus servicios. Esto es interpretable como un indicador de \emph{bajo riesgo de superposición de servicios} entre organismos, una de las dos motivaciones para la separación en inventarios. Con este aspecto en mente, es posible delinear dominios que abarquen a los servicios de un mismo organismo proveedor, dejando así en manos de estos el diseño de servicios re-utilizables y con responsabilidades separadas dentro de su propio inventario.
-
-    En concordancia con la idea de centralizar los servicios dentro de una misma plataforma, es necesario establecer determinados criterios con los que los servicios deben cumplir, separados de las recomendaciones sobre el diseño que se crean pertinentes. AGESIC debe establecer procesos estandarizados para la publicación de nuevos servicios en la PDI, a través de los cuales se verificará la compatibilidad de los servicios con los requerimientos establecidos —tal y como sucede en la plataforma actual, en donde los organismos trabajan en el diseño e implementación de sus servicios y luego realizan la solicitud a AGESIC para publicarlos en la PDI, por lo que gran parte de la gobernanza sobre el diseño e implementación, ocurre en forma independiente dentro del organismo.
-
-    Tomando estas consideraciones en cuenta es que se propone una variante del modelo de jurisdicción de SGPO por dominio federado, cumpliendo así con la agrupación de servicios por organismo, manteniendo la independencia en la gobernanza por parte de cada uno y a su vez estableciendo una SGPO central (AGESIC) encargada de establecer las políticas comunes a todos los organismos para el diseño de sus servicios conforme a los requerimientos de la PDI. La variante del modelo se da en los casos en que el organismo en cuestión cuenta con una estructura de gobernanza más compleja que una única SGPO centralizada para todos sus servicios. Esto último ocurre en casos en que más de un dominio es gobernado por el organismo; bajo esta situación, no se puede realizar una adaptación exacta a los modelos de jurisdicción presentados en el framework de base, ya que el organismo podría implementar su propio modelo de jurisdicción tomando como referencia su SGPO central, generando así más niveles de SGPO que los identificados en los modelos vistos.
-
-    En la figura \ref{imagen:modelo_jurisdiccion_sgpo_propuesta} se muestra el modelo de jurisdicción de la propuesta. Una línea punteada horizontal entre las SGPO de los organismos y los inventarios representa la posibilidad de los primeros de implementar su propio modelo de jurisdicción. Si bien la cantidad de dominios o inventarios puede diferir a la vista del organismo, desde la perspectiva de AGESIC, siempre se tomará el conjunto de servicios publicado por un organismo como parte de un único dominio.
 
     \begin{figure}
       \centering
       \includegraphics[width=\linewidth]{modelo_jurisdiccion_sgpo_propuesta}
-      \caption{Modelo de jurisdicción de SGPO propuesto}
-      \label{imagen:modelo_jurisdiccion_sgpo_propuesta}
+      \caption{Modelo de jurisdicción de SGPO propuesto para la PDI}
+      \label{Figura:ModeloJurisdiccionSGPOPropuesta}
     \end{figure}
+
+    Para la adpción del modelo de jurisdicción se tienen en cuenta dos condiciones dadas en la realidad actual: (a) la influencia de AGESIC sobre los procesos de análisis, definición e implementación de servicios se encuentra limitada a aspectos de opción tecnológica, ya que las etapas iniciales del proceso ocurren en cada organismo por separado; y (b) la división de caracter político de los organismos coincide con las del tipo de información, asegurando que dos organismos no se encuentren desarrollando servicios tales que ofrezcan información repetida o que se solapen en el tipo de acción que realizan. Esta última da un claro indicio de separación de dominios, en donde cada organismo proveedor es un conjunto de servicios relacionados entre sí por una misma área de negocios. Este escenario permite la aplicación de un modelo de jurisdicción basado en SGPO dedicadas a cada dominio, funcionando en forma federada con una SGPO central gestionada por AGESIC.
+
+    Este modelo se ajusta a la realidad actual de los organismos proveedores aplicando su propia gobernanza a su dominio de servicios, a la vez que le otorga a AGESIC la responsabilidad de establecer aspectos a todos los organismos desde la SGPO central. Es posible relativizar el ajuste a este modelo por parte de los organismos, dado que su autonomía les permite aplicar sus propias subdivisiones administrativas (SGPO por debajo de la del organismo, ciclos de vida de servicios distintos, entre otros); en esta propuesta se mantiene una visión de caja negra con respecto a los procesos administrativos en cada organismo, como se puede apreciar en la figura \ref{Figura:ModeloJurisdiccionSGPOPropuesta}. La gobernanza general aplicada desde la SGPO central se limitará a las actividades sobre las que tiene influencia AGESIC hoy en día: aspectos técnicos de publicación, de seguridad, procedimientos, entre otros. Todas aquellas decisiones que influyan sobre procesos internos a una SGPO independiente, no podrán ser tomadas por la SGPO central.
+
+    La aplicación y comunicación de este modelo a los organismos les permitirá mantener a estos sus estructuras administrativas y de gestión actuales, y le dará visión a AGESIC sobre la estructura jerárquica de aplicación de la gobernanza.
 
   \subsection{Ciclo de vida de servicios}
     \label{Solucion:Gobernanza:CicloDeVida}
-    Los organismos tienen independencia no sólo en el sistema de gobernanza que aplican a sus servicios, sino también en el que aplican a su infraestructura de publicación, mientras que AGESIC tiene jurisdicción sobre la infraestructura intermediaria entre los consumidores y la de los organismos proveedores, es decir, sobre la PDI. Esto hace necesario divergir del proceso en etapas básico del framework, visto en la sección \ref{MarcoConceptual:GobernanzaSOA}, y agregar etapas que cubran la negociación para la publicación de los servicios alojados en la infraestructura del organismo, en la PDI.
 
     \begin{figure}[h]
       \centering
       \includegraphics[width=\linewidth]{ciclo_de_vida_propuesta}
       \caption{Ciclo de vida de proyecto y servicios propuesto}
-      \label{imagen:ciclo_de_vida_propuesta}
+      \label{Figura:CicloDeVidaPropuesta}
     \end{figure}
 
-    En la figura \ref{imagen:ciclo_de_vida_propuesta} se presenta la secuencia propuesta para la publicación, monitoreo y versionado de servicios en la PDI gobernada por AGESIC, desde el inicio de su concepción en los organismos, pasando por su publicación en la infraestructura propia hasta llegar al subproceso de publicación en la plataforma. Las etapas contrastadas son las gobernadas por AGESIC y comienzan a partir de la solicitud de publicación de un servicio. Las etapas anteriores a la solicitud de publicación de la figura \ref{imagen:ciclo_de_vida_propuesta} funcionan a modo de ejemplo basado en las etapas de un proyecto SOA vistas en la sección \ref{MarcoConceptual:GobernanzaSOA}. La gobernanza en SOA de cada organismo permanece independiente y por lo tanto, no se establece que esas deban ser las etapas que los mismos deban seguir, aunque se recomienda la adopción de la gobernanza en SOA como herramienta central en la gestión de cada arquitectura.
+    Este proceso es una adaptación del original tomado de \cite{Erl:2011:SGG:1983453}, a la cual se le agregan las etapas correspondientes a los procesos administrativos y técnicos. En la figura \ref{Figura:CicloDeVidaPropuesta} se presenta la secuencia propuesta para la publicación, monitoreo y versionado de servicios en la PDI gobernada por AGESIC, desde el inicio de su concepción en los organismos, pasando por su publicación en la infraestructura propia hasta llegar al subproceso de publicación en la plataforma. Las etapas contrastadas (de color más oscuro) son las gobernadas por AGESIC y comienzan a partir de la solicitud de publicación de un servicio. Cada servicio transcurre un proceso similar al mostrado en la figura, previo al punto de inscripción, y luego cumple con las etapas establecidas en el modelo propuesto.
+
+    La independencia en la gobernanza de servicios de cada organismo (ya establecida en el modelo de jurisdicción propuesto en la sección \ref{Solucion:Gobernanza:ModeloJurisdiccion}), flexibiliza el ciclo de vida anterior a la inscripción de un servicio, pudiendo un organismo establecer su propio proceso antes de establecer un vínculo con la PDI. Si bien AGESIC establece normas técnicas de compatibilidad para la publicación, no se proponen restricciones a los procesos internos, siguiendo de la mano el modelo de jurisdicción.
+
+    Esta independencia de procesos va de la mano con la realidad actual y el alcance de la gobernanza ejercida desde AGESIC, por lo que la propuesta resulta estar adaptada a las condiciones.
 
   \subsection{Gobernanza del ciclo de vida en AGESIC}
     \label{Solucion:Gobernanza:CicloDeVidaAGESIC}
 
-    Ante la necesidad de proveer un nuevo servicio a través de la PDI, el organismo deberá contactar con AGESIC para hacer que el servicio se encuentre dentro de la plataforma y sea accesible por otros organismos. El proceso se describe en la figura \ref{imagen:proceso_publicacion_pdi}.
+    Ante la necesidad de proveer un nuevo servicio a través de la PDI, el organismo deberá contactar con AGESIC para hacer que el servicio se encuentre dentro de la plataforma y sea accesible por otros organismos. El proceso se describe en la figura \ref{Figura:ProcesoPublicacionPDI}.
 
     \begin{figure}[h]
       \centering
       % Pendiente
       \caption{Diagrama BPMN del proceso de publicación en la PDI}
-      \label{imagen:proceso_publicacion_pdi}
+      \label{Figura:ProcesoPublicacionPDI}
     \end{figure}
 
     \begin{enumerate}
@@ -53,20 +57,32 @@
 
     \subsection{Inscripción de servicio}
       \label{Solucion:Gobernanza:CicloDeVidaAGESIC:Inscripcion}
-      % Se había comentado de un sistema de formulario vía web en lugar de continuar con la utilización de papel como se hace hoy en día.
-      \emph{Próximamente}
-      \emph{Se maneja la idea de crear un formulario web para la gestión del proceso, en lugar de lo que se hace hoy en día mediante papeleo. Acá se debería hablar sobre inscripción, generación de SLAs entre AGESIC y el proveedor, etc.}
+
+      Un organismo proveedor de servicios que desea publicar su servicio deberá ponerse en contacto con AGESIC para dar inicio al proceso. Este comenzará rellenando un formulario vía web en una página alojada bajo el dominio de AGESIC\footnote{agesic.gub.uy} en el cual el personal a cargo de iniciar el trámite deberá detallar datos sobre el servicio a publicar, incluyendo características técnicas, responsables administrativos, ejemplos de uso, entre otros detallados en la figura \ref{Figura:TablaDatosInscripcion}. Este formulario será validado automáticamente verificando la completitud de los datos requeridos, a la vez que enviará una confirmación de recepción a la o las direcciones de correo electrónico especificadas con una copia de los datos ingresados en los campos y un código único de expediente o \emph{ticket} para la realización del seguimiento. La generación de este código es responsabilidad del sistema de gestión de la inscripción de servicios, el cual permitirá al personal administrativo de AGESIC la actualización del estado de los expedientes, de forma de permitir la realización del seguimiento del proceso por parte de los responsables en la parte proveedora.
+
+      \begin{figure}[h]
+        \centering
+        % Pendiente
+        \caption{Tabla de campos requeridos en el formulario de inscripción de un servicio}
+        \label{Figura:TablaDatosInscripcion}
+      \end{figure}
+
+      Los expedientes deberán transitar por cuatro estados básicos establecidos: \emph{Iniciado}, \emph{Procesando}, \emph{Confirmado}, \emph{Completado}. Estos abarcan estados generales, pero se podrán identificar nuevos a medida que el proceso se optimice y así se crea necesario. Es posible diseñar el sistema de inscripción via web de forma que se integre a una aplicación de gestión de expedientes existente que así lo permita, adoptando los estados provistos de fábrica.
+
+      El proceso de gestión de la inscripción debe seguir los pasos habituales de la realidad actual. Se destacan las negociaciones necesarias para establecer los criterios en el documento de acuerdo de nivel de servicios (\emph{SLA}), cuyo contenido está influenciado en gran medida por los datos técnicos aportados en el formulario de inscripción. El documento SLA debe establecer los acuerdos de nivel de servicio desde el proveedor en dirección hacia la PDI de forma tal que sea posible generar nuevos SLA entre AGESIC, el proveedor y los potenciales consumidores.
+
+      La culminación de este proceso en forma exitosa da comienzo a la etapa de despliegue, abordada en la sección \ref{Solucion:Gobernanza:CicloDeVidaAGESIC:Despliegue}.
 
     \subsubsection{Despliegue y mantenimiento}
       \label{Solucion:Gobernanza:CicloDeVidaAGESIC:Despliegue}
 
-      En esta etapa se lleva a cabo la configuración del acceso al servicio por parte de los consumidores a través de la PDI. Se asume completada la etapa de implantación en la plataforma del proveedor. En este caso, el objetivo es configurar una comunicación entre la PDI y el servicio desplegado del lado del organismo, de modo que los clientes de dicho servicio establezcan la comunicación con el lado del proveedor a través de la PDI de forma transparente. Para lograr esta comunicación se utilizará una tecnología que permita crear ``proxies" en la PDI, preconfigurados para redirigir el tráfico hacia la infraestructura del proveedor como se muestra en la figura \ref{imagen:cliente_pdi_proveedor}. Ejemplos de este tipo de tecnología son los \emph{Enterprise Service Bus (ESB)} de proveedores conocidos como JBoss\footnote{https://www.jboss.org/jbossesb/} o IBM\footnote{\url{http://www.ibm.com/software/products/en/wsesb/}}. Los procedimientos en cuanto a configuraciones de seguridad y acceso están fuera del alcance de esta propuesta. Se sugiere mantener las características actuales.
+      En esta etapa se lleva a cabo la configuración del acceso al servicio por parte de los consumidores a través de la PDI. Se asume completada la etapa de implantación en la plataforma del proveedor. En este caso, el objetivo es configurar una comunicación entre la PDI y el servicio desplegado del lado del organismo, de modo que los clientes de dicho servicio establezcan la comunicación con el lado del proveedor a través de la PDI de forma transparente. Para lograr esta comunicación se utilizará una tecnología que permita crear \emph{proxies} en la PDI, preconfigurados para redirigir el tráfico hacia la infraestructura del proveedor como se muestra en la figura \ref{Figura:ComunicacionProxyClienteProveedor}. Ejemplos de este tipo de tecnología son los \emph{Enterprise Service Bus (ESB)} de proveedores conocidos como JBoss\footnote{\url{https://www.jboss.org/jbossesb/}} o IBM\footnote{\url{http://www.ibm.com/software/products/en/wsesb/}}. Los procedimientos en cuanto a configuraciones de seguridad y acceso están fuera del alcance de esta propuesta.
 
       \begin{figure}[h]
         \centering
         \includegraphics[width=\linewidth]{cliente_pdi_proveedor}
         \caption{Patrón «Proxy» aplicado a la comunicación entre cliente y proveedor}
-        \label{imagen:cliente_pdi_proveedor}
+        \label{Figura:ComunicacionProxyClienteProveedor}
       \end{figure}
 
       El rol de \emph{desarrollador} participa en las actividades llevadas a cabo en esta etapa, recibiendo la especificación del servicio para realizar las configuraciones pertinentes en la infraestructura de software de la PDI. Dicha especificación es obtenida a partir del proceso descrito en la sección \ref{Solucion:Gobernanza:CicloDeVidaAGESIC:Inscripcion}.
