@@ -77,42 +77,69 @@ Varios de los roles que se consideran dentro de la gobernanza en SOA no están c
 
 \section{Estrategia de versionado}
 \label{Analisis:EstrategiaVersionado}
-En la actualidad para el versionado de servicio AGESIC es muy limitado. Se utiliza una plataforma de IBM (Data Power) y un firewall XML a nivel de aplicación.
+La creación de una nueva versión de un servicio surge bajo el pedido de el organismo proveedor a AGESIC. Por esto, se debe realizar una nota formal especificando la necesidad del cambio. 
+%************ Comentario de JP****************
+%Sabemos algo mas de la nota formal?
+Una vez que la nueva versión este terminada y funcionando, AGESIC crea un proxy para la nueva versión en su plataforma \emph{WebSphere Data Power Integration} para que otros organismos puedan consumir el servicio.
+\emph{WebSphere Data Power Integration} es una herramienta de integración y conectividad de IBM. AGESIC utiliza la versión {WebSphere DataPower Integration Appliance XI50 (Data Power)}.
+Ademas de utilizar esta herramienta, AGESIC utiliza un firewall XML a nivel de aplicación para permitir o negar el acceso del servicio invocado basándose en políticas que tome el Administrador de Políticas de Seguridad.
+El mecanismo que tiene AGESIC para realizar un pasaje a producción de una nueva versión de servicio
+es crear un nuevo proxy (IP/Puerto) bajo la plataforma (Data Power) que esté apuntando a la nueva versión del servicio.
+Ejemplo:
+				\begin{enumerate}
+				\item 192.168.1.133:6001 	= v1.0
+				\item 192.168.1.133:6002 	= v2.0
+				\end{enumerate}
 
-Actualmente el proceso para publicar una nueva versión de un servicio comienza con la necesidad de un organismo de publicar una nueva versión de un servicio propio o de otro organismo. Para esto se debe realizar una nota formal especificando la necesidad.
+      \begin{figure}[h]
+        \centering
+        \includegraphics[scale=1]{ej_dataPower}
+        \caption{Interacción de servicios con Data Power}
+        \label{figura:ej_dataPower}
+      \end{figure}
+En la figura \ref{figura:ej_dataPower} se ilustra la interacción de los organismos consumidores de un servicio con la plataforma Data Power en base al ejemplo.
+Otra alternativa de AGESIC para crear una nueva versión es por intermedio de la plataforma, utilizar el mismo proxy que se está utilizando actualmente pero cambiando el contexto de la URL.
+Ejemplo: …/servicios/mides/obtenerEstadoPersona-v2.0 apuntaría a la versión 2.0 del servicio.
+%************ Comentario de JP****************
+%Yo no entendi mucho como funciona el versionado en Agesic, capaz podes vichar nuevamente esta parte.
 
-Una vez que esté terminado y funcional, AGESIC crea un proxy para la nueva versión en su plataforma Data Power para que los consumidores puedan acceder.
-
-AGESIC posee distintas formas para la puesta en producción de una nueva versión de servicio:
-La primer alternativa es crear un nuevo proxy (IP/Puerto) bajo la plataforma (Data Power) que esté apuntando a la nueva versión del servicio.
-
-A la hora de la migración de versión de servicio para los consumidores, se depende del organismo ya que en caso que éste cree una nueva versión, no se tiene definido si el servicio anterior estará disponible o no; esta decisión es tomada por el organismo. Esta puede ser considerada una omisión de AGESIC, ya que no establece la importancia y condiciones sobre el versionado al momento de la liberación de una nueva versión. Por ejemplo, poder definir un cierto tiempo en la que los dos servicios (versión 1.0 y versión 2.0) estén operables, para la migración de los consumidores.
-
-Se toman en cuenta muchas variables a la hora de versionar un servicio pero no está estandarizado este proceso. La variable más importante a la hora de un cambio de versión es la cantidad de consumidores que tiene el servicio en cuestión, ya que no es viable el cambio si se tiene más de un consumidor activo. 
-
-Hoy solamente se hacen recomendaciones a los organismos pero no se tienen exigencias sobre estos temas.
-
-Es prioritario establecer una metodología, debido a la importancia de poder organizar la plataforma. Actualmente existen alrededor de 54 servicios ejecutándose en entorno de producción. La cantidad creció precipitadamente en el último año, duplicando el número con respecto al año anterior.
-
-En esta metodología se deben definir la estrategia de versionado. Además de esta elección hay que acondicionar esta estrategia para las necesidades propias, definir cuándo es necesario el pasaje a una nueva versión mayor y cuando no lo es, entre otros aspectos necesarios para la convivencia de múltiples versiones.
+La decisión del mantenimiento de las versiones anteriores a la nueva publicada depende del organismo proveedor del servicio. Debe definir si los servicios anteriores estarán disponibles o no para ser consumidos por otros organismos. AGESIC no establece la importancia y condiciones sobre el versionado al momento de la liberación de una nueva versión. Siendo  así muy limitado el mecanismo de publicación de una versión. Hoy solamente se hacen recomendaciones a los organismos pero no se tienen exigencias sobre estos temas.
 
 \section{Calidad de servicios}
 \label{Analisis:CalidadServicios}
-Utilizar la PDI de AGESIC aporta a las instrucciones una mejor calidad de sus servicios. Los organismos pueden aprovechar los entornos que provee el Middleware de la plataforma para alojar en la PDI  servicios o aplicaciones que requieran infraestructura de hardware o  software avanzada, no disponible en los mismos. Esta infraestructura  puede ser necesaria para garantizar determinados niveles de calidad de  servicio en relación, por ejemplo, tiempos de respuesta y disponibilidad \cite{Agesic:GuiaUsos}.
-Los productos de ESB de la Plataforma de Middleware proveen  mecanismos que pueden ser utilizados por los organismos para el consumo y provisión de servicios. Cuentan con varias funcionalidades nativas que permiten el monitoreo de distintos tipos de información como tiempos de  respuesta de los servicios, contenido de los mensajes, cantidad de  invocaciones a los servicios, etc.
-A continuación se describen algunos de los principales mecanismos que  brindan estos productos en el marco de la PDI \cite{AGESIC:PDI}.
-En cuento al Sistema de Seguridad de la PDI provee un conjunto de mecanismos que facilitan la implementación de requerimientos de seguridad a aplicaciones, servicios o componentes en el marco de la PDI. En particular, permite que los organismos deleguen a la PDI la tarea de controlar el acceso a los servicios que proveen.
-Todos estos conjuntos de mecanismo que ofrece la PDI son importantes sobre los servicios y se podrían llegar a considerar como factores de calidad en un modelo de calidad de servicios, pero no existe en AGESIC ninguna definición de modelo que  permitan asegurar el cumplimiento de los niveles de calidad acordados en un SLA por un servicio publicado. 
-Una forma de responder esta necesidad es valorando el nivel de calidad del servicio, por lo cual se hace necesario desarrollar un modelo de calidad con el uso de criterios de evaluación considerados como estándares, aplicados al caso específico de “Web Service”. Este modelo responde a la necesidad de disponer de una herramienta que estime la calidad de estos servicios en una manera específica.
+AGESIC monitorea algunos atributos de calidad y sus valores son ofrecidos en el catalogo de servicios que se describe en la sección \ref{Analisis:CalidadServicios}. Si bien son factores que forman parte de varios modelos de calidad analizados en la sección \ref{MarcoConceptual:calidad}, AGESIC no define ningún modelo de calidad especifico ni establece la forma de evaluar los factores.
+La disponibilidad del servicio es uno de los factores de calidad que mide. Por conversaciones con el cliente, la forma de evaluar este factor es realizando ping (invocaciones al endpoint del proveedor) deforma de saber si el servicio esta disponible.
+La PDI al utilizar un Middleware como es el ESB, donde los organismos pueden aprovechar los entornos que provee el Middleware de la plataforma para alojar servicios o aplicaciones que requieran infraestructura de hardware o  software avanzada, no disponible por ellos. Esta infraestructura  puede ser necesaria para garantizar determinados niveles de calidad de  servicio en relación, por ejemplo, tiempos de respuesta y disponibilidad \cite{Agesic:GuiaUsos}.
+Los productos de ESB de la Plataforma de Middleware proveen mecanismos que pueden ser utilizados por los organismos para el consumo y provisión de servicios. Cuentan con varias funcionalidades nativas que permiten el monitoreo de distintos tipos de información como tiempos de  respuesta de los servicios, contenido de los mensajes, cantidad de  invocaciones a los servicios, etc. En marco de seguridad permite que los organismos deleguen a la PDI la tarea de controlar el acceso a los servicios que proveen.
+Todo este conjunto de funcionalidades que ofrecen el ESB son de gran aporte para las mediciones de los atributos de calidad. Pero es inminente la necesidad de establecer que factores son de interés monitorear para los servicios que ofrece la PDI. 
+De la manera actual, AGESIC carece de un mecanismo transparente donde permita evaluar de forma directa los niveles de calidad establecidos en el SLA establecido con el proveedor del servicio.
 
 \section{Descubrimientos de Servicios}
 \label{Analisis:Catalogo}
-AGESIC presenta un catálogo de servicios cuyo mantenimiento es realizado por ellos mismos, y a su vez cuenta con los servicios de una Mesa de Ayuda dedicada a atender requerimientos provenientes de las instituciones públicas usuarias del servicio. Tiene como motivación de AGESIC poner esta información a disposición de cualquier interesado. El catálogo es de  interés para empresas proveedoras del Estado o cualquier institución, pública o privada, que  desee beneficiarse con el mismo \cite{Agesic:Catalogo}.
+AGESIC presenta un catálogo de servicios cuyo mantenimiento es realizado por ellos mismos, y a su vez cuenta con los servicios de una Mesa de Ayuda dedicada a atender requerimientos provenientes de las instituciones públicas usuarias del servicio. Es una motivación de AGESIC poner esta información a disposición de cualquier interesado. El catálogo es de  interés para empresas proveedoras del Estado o cualquier institución, pública o privada, que  desee beneficiarse con el mismo \cite{Agesic:Catalogo}.
 
-El catálogo es accedido a través de una interfaz web disponible en \cite{Agesic:Catalogo} que tiene la siguiente estructura:
-\emph{FALTA IMAGEN}
+El catálogo es accedido a través de una interfaz web disponible en \cite{Agesic:Catalogo} como se ve en la figura \ref{figura:ej_catalogo_agesic} :
+      \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.5]{ej_catalogo_agesic}
+        \caption{Catalogo de Servicio de AGESIC}
+        \label{figura:ej_catalogo_agesic}
+      \end{figure}
+Cada Web Services cuenta con un conjunto de metadatos sobre el proveedor de servicio: descripción, WSDL, entre otros, y niveles de calidad que se comprometen a cumplir: disponibilidad, tiempos de respuesta, volumen de carga máxima.
+      \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.5]{ej_servicio_del_catalogo}
+        \caption{Servicio del BPS en el Catalogo de Servicio de AGESIC}
+        \label{figura:ej_servicio_del_catalogo}
+      \end{figure}
+En la figura \ref{figura:ej_servicio_del_catalogo} se puede ver un ejemplo de la información de un servicio que ofrece el catalogo.
+A través del catalogo de servicios se realizan el descubren de los servicios publicados. Al visualizar el servicio, no encontramos ninguna información con respecto a las distintas versiones del servicio. De igual manera no ofrece información sobre factores de calidad que permitan asegurar el cumplimiento de los SLA establecidos.
 
-Cada “Web Service” cuenta con un conjunto de metadatos sobre el proveedor de servicio: descripción, WSDL, entre otros, y niveles de calidad que se comprometen a cumplir: disponibilidad, tiempos de respuesta, volumen de carga máxima, etc.
-\emph{FALTA IMAGEN}
-
-El catálogo de servicios es la forma que existe para el descubrimiento de los servicios publicados. Hoy en día no se ofrece la información sobre las métricas de calidad ni la versión del servicio. Sería de gran interés para AGESIC poder integrar en un catálogo este conjunto de información, permitiendo una mejor  organización de la institución y monitoreo de los servicios.
+\section{Conclusiones del capitulo}
+\label{Analisis:conclusiones}
+% Publicacion
+\emph{MIG: Falta un resumen de publicación de los servicio}
+%Versionado,Calidad y CAtalogo
+En cuanto al versionado se toman en cuenta muchas variables a la hora de versionar un servicio pero no está estandarizado este proceso.Hoy solamente se hacen recomendaciones a los organismos pero no se tienen exigencias sobre estos temas. Por lo que es necesario establecer una metodología, debido a la importancia de poder organizar la plataforma. La cantidad de servicios va en aumento, y una buena gestión es fundamental para poder establecer con buenas practicas un proceso de versionado acorde con los cambios que realice el proveedor al servicio. En esta metodología se deben definir la estrategia de versionado. Además de esta elección hay que acondicionar esta estrategia para las necesidades propias, definir cuándo es necesario el pasaje a una nueva versión mayor y cuando no lo es, entre otros aspectos necesarios para la convivencia de múltiples versiones.
+Sobre la calidad de los servicios vimos que no existe ningún modelo de calidad definido que permita monitorear los niveles de acuerdo de calidad del servicio en que se compromete ofrecer el proveedor a los clientes de los mismos. Al utilizar un ESB, permite aprovechar muchas funcionalidades que permiten mejorar la calidad y monitorear los servicios. Con una definición de un modelo de calidad, se pueden aprovechar dichas funcionalidades que ofrecen los ESB, brindando información que permitan analizar los rendimientos de los servicios y controlar los criterios de calidad comprometidos por los proveedores.
+La información de las distintas versiones existentes de los servicios como el desarrollo en profundidad de los aspectos de calidad de los mismos, no son representadas en el catalogo de servicios que ofrece actualmente AGESIC. El catalogo de servicio es la forma de descubrir lo servicios, por lo que es fundamental poder establecer en el catalogo dicha información para ofrecer a los clientes consumidores del servicio como a los proveedores de los servicios.
