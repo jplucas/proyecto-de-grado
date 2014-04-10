@@ -95,14 +95,16 @@ La figura \ref{figura:ej_mensaje_soap} es un ejemplo de un mensaje SOAP invocand
 Como resultado de la invocación, se recibe un mensaje como representa la figura \ref{figura:ej_resp_mensaje_soap}.
 \subsubsection{WSDL}
 \label{MarcoConceptual:WSDL}
-\emph{Web Services Description Language (WSDL)} permite describir los distintos métodos o funciones que están disponibles en un Web Services, con sus parámetros o argumentos que se les debe pasar y el tipo de dato que retornará la función como resultado, y las ubicaciones en donde puede accederse. Especifica la sintaxis y los mecanismos de intercambio de mensajes \cite{WSDL:W3C}. \emph{WSDL} es es un lenguaje de definición de interfaces basado en XML que permite describir de forma estándar a los Web Services \cite{Tesis:LauraGonzalez:PlataformaESB} y representa una especie de contrato entre el proveedor y el que solicita. 
+\emph{Web Services Description Language (WSDL)} permite describir los distintos métodos o funciones que están disponibles en un Web Services, con sus parámetros o argumentos que se les debe pasar y el tipo de dato que retornará la función como resultado, y las ubicaciones en donde puede accederse. Especifica la sintaxis y los mecanismos de intercambio de mensajes \cite{WSDL:W3C}. \emph{WSDL} es es un lenguaje de definición de interfaces basado en XML que permite describir de forma estándar a los Web Services \cite{Tesis:LauraGonzalez:PlataformaESB} y representa una especie de contrato entre el proveedor y el que solicita.
+Dentro de la definición del \emph{WSDL} se encuentra el \emph{endpoint} el cual nos indica una localización específica para acceder a un Web Services usando un protocolo y formato de datos específico.
+
   \begin{figure}[h]
     \centering
     \includegraphics[scale=0.5]{estructura_wsdl}
     \caption{Estructura WSDL}
     \label{figura:estructura_wsdl}
   \end{figure}
-En la figura \ref{figura:estructura_wsdl} se puede observar la estructura definida por un WSDL.
+En la figura \ref{figura:estructura_wsdl} se puede observar la estructura definida por un \emph{WSDL}.
 La \emph{descripción abstracta} contiene \cite{WSDL:W3C}
 				\begin{enumerate}
 				\item \emph{Types} para indicar los tipos de datos que utiliza el Web Service
@@ -113,7 +115,7 @@ En la \emph{descripción concreta} se encuentran los elementos \cite{WSDL:W3C}
 				\begin{enumerate}
 				\item \emph{Binding} especifica un protocolo concreto así como el formato de datos para las operaciones, y los mensajes definidos en un portType particular. Puede existir
 cualquier número de bindings para un portType
-				\item \emph{Port} especifica una dirección para un \emph{binding}. Define un endpoint particular especificando una dirección única para un binding. refiere a mensajes de salida y entrada
+				\item \emph{Port} especifica una dirección para un \emph{binding}. Define un \emph{endpoint} particular especificando una dirección única para un binding. refiere a mensajes de salida y entrada
 				\end{enumerate}
 \subsubsection{UDDI}
 \label{MarcoConceptual:UDDI}
@@ -215,7 +217,7 @@ La figura \ref{figura:metamodelo_de_calidad} nos indican los siguientes niveles.
 
 \subsection{Modelos de Calidad}
 \label{MarcoConceptual:modelos_calidad}
-Un \emph{modelo de calidad} es el resultado de desarrollar un metamodelo como el visto en la sección anterior. Es aquí donde se definen los factores de calidad que son de interés monitorear su comportamiento para cada servicio. Existen varios enfoques interesantes al definir un modelo, particularmente se analizará el Modelo de Calidad para Web Services de OASIS, el Modelo de calidad en base al proyecto S-Cube y los principales factores de calidad que son requeridos para apoyar la QoS por IBM.
+Un \emph{modelo de calidad} es el resultado de definir que elementos del metamodelo se quiere analizar. Esos elementos son los factores de calidad que son de interés monitorear su comportamiento para cada servicio. Existen varios enfoques interesantes de modelos, particularmente se analizarán el Modelo de Calidad para Web Services de OASIS, el Modelo de calidad en base al proyecto S-Cube y los principales factores de calidad que son requeridos para apoyar la QoS por IBM.
 \subsubsection{Modelo OASIS}
 \label{MarcoConceptual:modelo_OASIS}
 \emph{OASIS (Organization for the Advancement of Structured Information Standards)} es una organización sin fines de lucro que conduce el desarrollo, unificación y adopción de estándares para la sociedad de información global. Ha producido muchos de los estándares hoy usados para web services \cite{OASIS:def}.Presenta un modelo conceptual que define la interacción entre las partes involucradas \emph{Actores de calidad (Quality Associates)}, \emph{Actividades de calidad (Quality Activities)} y \emph{Factores de calidad (Quality Factors)} para habilitar la calidad de servicio.
@@ -229,7 +231,7 @@ En la figura \ref{figura:oasis_modelo} se muestra el modelo conceptual de OASIS.
 Al realizar un mapeo con el metamodelo abstracto de calidad visto en la sección \ref{MarcoConceptual:modelo_OASIS}, vemos en la figura \ref{figura:metamodelo_de_calidad} la agrupación del modelo propuesto por OASIS en la estructura Dimensión - Factor - Métrica \cite{Articulo:LauraGonzalez:CalidadWS}.
   \begin{figure}[h]
     \centering
-    \includegraphics[scale=1]{metamodelo_OASIS}
+    \includegraphics[scale=0.5]{metamodelo_OASIS}
     \caption{Metamodelo de Calidad propuesto por OASIS}
     \label{figura:metamodelo_OASIS}
   \end{figure}
@@ -240,7 +242,7 @@ En el Anexo se describen cada una de las métricas del modelo.
 S-Cube es un proyecto Europeo que define  principios, técnicas y métodos  para asegurar la calidad de los servicios. Diseñó un modelo de calidad para sistemas basados en servicios seleccionado distintos modelos de diferentes disciplinas, seleccionando los atributos de calidad relevante para los asegurar la calidad en los servicios \cite{Scube}.
   \begin{figure}[h]
     \centering
-    \includegraphics[scale=1]{modelo_Scube}
+    \includegraphics[scale=0.60]{modelo_Scube}
     \caption{Modelo de Calidad S-Cube}
     \label{figura:modelo_Scube}
   \end{figure}
@@ -252,7 +254,7 @@ En el Anexo se describen cada una de las métricas del modelo.
 \emph{International Business Machines (IBM)} es una empresa multinacional estadounidense de tecnología y consultoria. IBM fabrica y comercializa hardware y software para computadoras, y ofrece servicios de infraestructura, alojamiento de Internet, y consultoría en una amplia gama de áreas relacionadas con la informática. Con la evolución de los Web Services, IBM analiza los principales requisitos de calidad que se deben monitorear en los servicios \cite{IBM:QoS}.
   \begin{figure}[h]
     \centering
-    \includegraphics[scale=1]{modeloIBM}
+    \includegraphics[scale=0.9]{modeloIBM}
     \caption{Modelo de calidad IBM}
     \label{figura:modelo_IBM}
   \end{figure}

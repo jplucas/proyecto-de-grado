@@ -1,0 +1,24 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch borrador
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   chapters/analisis.tex
+#	new file:   images/pdf/ej_catalogo_agesic.png
+#	new file:   images/pdf/ej_dataPower.png
+#	new file:   images/pdf/ej_servicio_del_catalogo.png
+#	modified:   proyecto_de_grado.synctex.gz
+#
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	deleted:    compile.sh
+#
+Se trabajo en el capitulo de Analis de la realidad de Agesic.
+Cree una seccion de conclusiones que estaria bueno cerrar todas las necesidades que necesita AGESIC para poder resaltarlas en el capitulo de propuesta de
+solucion que es la siguiente. MIG si podes aporta vos tu resumen que ya encaraste bastante el capitulo 4. Sino yo despues lo escribo y lo miras.
+Con la parte de versionado lo redacte un poco mas, Arian si podes explicar mejor como funciona las versiones en agesic y cambiar el ejmplo estaria mejor. Porque no se si queda muy claro.
+
