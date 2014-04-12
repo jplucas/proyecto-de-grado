@@ -1,2 +1,145 @@
 \section{Calidad}
 \label{Solucion:Calidad}
+
+Tras el análisis de la realidad en AGESIC visto en el capitulo \ref{Analisis}, en esta sección se propondrá un modelo de calidad para monitorear los servicios de AGESIC.
+
+El modelo esta basado en el metamodelo abstracto de calidad analizado en el capitulo \ref{MarcoConceptual}.
+La construcción del modelo de calidad propuesto esta basado a través de revelamiento con el cliente. Una vez establecido los datos prioritarios se definen Dimensiones y Factores como se proponen en el capitulo \ref{MarcoConceptual:metamodelo_calidad}.
+Para lograr estas definiciones, se realizo una comparación con los principales atributos de calidad de los modelos analizados en la sección \ref{MarcoConceptual:modelos_calidad} que son de interés para AGESIC.
+  
+   \begin{table}[h]
+    \begin{tabular}{ |c | c | c  | c|} 
+    \hline
+     \textbf{Atributos} & \textbf{OASIS} & \textbf{S-Cube}  & \textbf{IBM}  \\
+      \hline
+     	\emph{Response Time} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} & \\
+	 \hline
+     	\emph{Scalability} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} \\
+	\hline
+     	\emph{Throughput} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} \\
+	\hline
+     	\emph{Latency} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} \\
+	\hline
+     	\emph{Reliability} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} \\
+	\hline
+     	\emph{Regulatory} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} \\
+	\hline
+     	\emph{Availability} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} \\
+	\hline
+     	\emph{Accessibility} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} & \\
+	\hline
+     	\emph{Successability} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} & \\
+	\hline
+     	\emph{Time To Repair} & &  & 
+		\includegraphics[scale=0.5]{icon_5801} \\
+	\hline
+     	\emph{Transaction Time} & &
+     	\includegraphics[scale=0.5]{icon_5801}  &  \\
+	\hline
+	\hline
+     	\emph{Service Cost} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} & \\
+	\hline
+     	\emph{Usability} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} & \\	
+	\hline
+     	\emph{Satisfaction} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} & \\		
+	\hline
+     	\emph{Content accessibility} & & 
+		\includegraphics[scale=0.5]{icon_5801} & \\
+	\hline
+	\hline
+     	\emph{Confidentiality} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} \\
+	\hline
+     	\emph{Integrity} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} \\
+	\hline
+     	\emph{Authentication} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} \\
+	\hline
+     	\emph{Access Control} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} \\
+	\hline
+     	\emph{Non-Repudiation} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} \\
+	\hline    
+     	\emph{Traceability} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} \\	
+	\hline
+	\hline	
+	  	\emph{Data validity} &  & 
+		\includegraphics[scale=0.5]{icon_5801} &  \\	
+	\hline	  
+	 	\emph{Data policy} &  & 
+		\includegraphics[scale=0.5]{icon_5801} &  \\
+	\hline	
+	  	\emph{Data integrity} &  & 
+		\includegraphics[scale=0.5]{icon_5801} &  \\
+	\hline	
+	   \emph{Data encryption Non-repudation} &  & 
+		\includegraphics[scale=0.5]{icon_5801} &  \\	
+	\hline
+	\hline
+     	\emph{WS Interoperability} & 
+		\includegraphics[scale=0.5]{icon_5801} & 
+		\includegraphics[scale=0.5]{icon_5801} &  \\	
+	 \hline
+    \end{tabular}
+    \caption{Comparación de atributos de calidad con los modelos OASIS,S-Cube y IBM}
+    \label{tabla:comparacion_atributos}
+  \end{table}
+  
+En la tabla \ref{tabla:comparacion_atributos} se puede observar como los atributos se relacionan entre los modelos analizados. Gran cantidad de atributos están relacionados entre las distintas propuestas. En base a este análisis reagrupamos los conceptos en común, dando como resultado el conjunto de dimensiones y factores que se presenta en la figura \ref{figura:sol_mod_calidad}.
+  \begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{sol_modelo_calidad}
+    \caption{Propuesta de Modelo de Calidad:Dimensiones y Factores}
+    \label{figura:sol_mod_calidad}
+  \end{figure}
+  
+  \emph{***Pendiente***}
+  \emph{Descripción de las dimensiones}
+  \emph{Descripción de las Factores}
+  \emph{Definición de las métricas}
+  \emph{Definición métodos}
