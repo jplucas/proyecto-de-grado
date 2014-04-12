@@ -27,31 +27,33 @@ Description Discovery and Integration (UDDI) como se muestra en la figura \ref{f
 \subsubsection{XML}
 \label{MarcoConceptual:XML}
 \emph{Extensible Markup Language (XML)} es un formato de texto simple, muy flexible derivado de SGML (ISO 8879). Originalmente diseñado para cumplir con los desafíos de la publicación electrónica a gran escala, XML también está desempeñando un papel cada vez más importante en el intercambio de una amplia variedad de datos en la Web y en otras partes. No es un lenguaje, es un metalenguaje. Permite crear lenguajes, definir etiquetas y sus atributos, definir relaciones entre las etiquetas, describir servicios \cite{XSLT:definiciones,XML:W3C}.
-Los \emph{XML} pueden ser transformados a través de \emph{XSLT}.
+\subsubsection{XSLT}
+\label{MarcoConceptual:XSLT}
+\emph{Extensible Stylesheet Language Transformations (XSLT)} es un lenguaje de transformación de documentos \emph{XML} en otros documentos \emph{XML}.
   \begin{figure}[h]
     \centering
     \includegraphics[scale=0.5]{xslt_resumen}
     \caption{Etapas de aplicación de un XSLT}
     \label{figura:xslt_resumen}
   \end{figure}
- Estos son un lenguaje de programación declarativo que permite generar documentos a partir de documentos XML como muestra la figura \ref{figura:xslt_resumen} \cite{XSLT:definiciones}.
+ Es un lenguaje de programación declarativo. El flujo de una transformación se puede notar en la figura \ref{figura:xslt_resumen}
  \begin{enumerate}
-				\item El documento XML es el documento inicial a partir del cual se va a generar el resultado
-				\item La hoja de estilo XSLT es el documento que contiene el código fuente del programa, es decir, las reglas de transformación que se van a aplicar al documento inicial.
-				\item El procesador XSLT es el programa de ordenador que aplica al documento inicial las reglas de transformación incluidas en la hoja de estilo XSLT y genera el documento final
-				\item El resultado de la ejecución del programa es un nuevo documento (que puede ser un documento XML o no)
-				\end{enumerate}
+        \item Un documento XML
+        \item La hoja de estilo XSLT es el documento que contiene el código fuente del programa, es decir, las reglas de transformación que se van a aplicar al documento de origen.
+        \item El procesador XSLT es el programa que aplica al documento de origen, las reglas de transformación definidas en la hoja de estilo XSLT
+        \item El resultado de la ejecución del programa es un nuevo documento (que puede ser un documento XML o no)
+        \end{enumerate}
   \begin{figure}[h]
     \centering
     \includegraphics[scale=0.5]{xslt_ejemplo}
     \caption{Estructura básica XSLT}
     \label{figura:xslt_ejemplo}
-  \end{figure}	
-Una hoja de estilo XSLT es un documento XML que contiene al menos las etiquetas que se muestra en la figura \ref{figura:xslt_ejemplo}. Estas etiquetas son \cite{XSLT:definiciones}:
- 				\begin{enumerate}
-				\item La declaración xml <?xml>, propia de cualquier documento XML
-				\item La instrucción <xsl:stylesheet> es la etiqueta raíz de la hoja de estilo, sus atributos indican la versión y el espacio de nombres correspondiente
-				\end{enumerate}
+  \end{figure}
+Una hoja de estilo XSLT es un documento XML. Se utilizan etiquetas para definir estas hojas. Las etiquetas mínimas para definirla son las que se muestra en la figura \ref{figura:xslt_ejemplo}. Estas etiquetas son \cite{XSLT:definiciones}:
+        \begin{enumerate}
+        \item La declaración xml <?xml>, propia de cualquier documento XML
+        \item La instrucción <xsl:stylesheet> es la etiqueta raíz de la hoja de estilo, sus atributos indican la versión y el espacio de nombres correspondiente
+        \end{enumerate}
 Dentro de la instrucción <xsl:stylesheet> se pueden encontrar los llamados elementos de alto nivel y las plantillas, como en el ejemplo siguiente \cite{XSLT:definiciones}:
   \begin{figure}[h]
     \centering
@@ -60,14 +62,14 @@ Dentro de la instrucción <xsl:stylesheet> se pueden encontrar los llamados elem
     \label{figura:xslt_ejemplo2}
   \end{figure}
 En la figura \ref{figura:xslt_ejemplo2} se ven las etiquetas \cite{XSLT:definiciones}:
- 				\begin{enumerate}
-				\item El elemento de alto nivel <xsl:output> indica el tipo de salida producida
-				\item La instrucción <xsl:template> es una plantilla.
-					\begin{enumerate}
-					\item El atributo match indica los elementos afectados por la plantilla y contiene una expresión XPath
-					\item El contenido de la instrucción define la transformación a aplicar (si la instrucción no contiene nada, como en el ejemplo anterior, sustituirá el nodo por nada)
-					\end{enumerate}
-				\end{enumerate}
+        \begin{enumerate}
+        \item El elemento de alto nivel <xsl:output> indica el tipo de salida producida
+        \item La instrucción <xsl:template> es una plantilla.
+          \begin{enumerate}
+          \item El atributo match indica los elementos afectados por la plantilla y contiene una expresión XPath
+          \item El contenido de la instrucción define la transformación a aplicar (si la instrucción no contiene nada, como en el ejemplo anterior, sustituirá el nodo por nada)
+          \end{enumerate}
+        \end{enumerate}
 A través de un \emph{XML Schema} se establece la estructura detallada de los mensajes definiendo qué elementos y atributos se permiten, en qué orden deben aparecer y qué tipo de datos pueden contener \citep{Tesis:LauraGonzalez:PlataformaESB,XML:W3C}.
 \subsubsection{SOAP}
 \label{MarcoConceptual:SOAP}
