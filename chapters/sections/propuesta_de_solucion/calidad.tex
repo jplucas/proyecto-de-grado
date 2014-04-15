@@ -137,9 +137,137 @@ En la tabla \ref{tabla:comparacion_atributos} se puede observar como los atribut
     \caption{Propuesta de Modelo de Calidad:Dimensiones y Factores}
     \label{figura:sol_mod_calidad}
   \end{figure}
-  
-  \emph{***Pendiente***}
-  \emph{Descripción de las dimensiones}
-  \emph{Descripción de las Factores}
-  \emph{Definición de las métricas}
-  \emph{Definición métodos}
+
+\subsubsection{Descripción de las dimensiones}
+La solución de modelo de calidad presentado en la figura \ref{figura:sol_mod_calidad} consta de las siguientes dimensiones: 
+		\begin{enumerate}
+			\item \emph{Security (Seguridad)} es la dimensión enfocada a monitorear la calidad de servicios Web Services en aspectos de seguridad, de forma de poder analizar diferentes controles que permitan proteger al servicios.
+			\item  \emph{Performance and Stability (Performances y Estabilidad)} es la dimensión enfocada al análisis del rendimiento de los servicios y su comportamiento a lo largo del tiempo.
+			\item  \emph{Usability and Cost (Usabilidad y Costos)} es la dimensión que permite analizar los aspectos que aportan a la facilidad,aprendizaje y conformidad por parte de los usuarios que consumen los servicios , junto con los distintos costos que puede tener los mismos.
+			\item  \emph{Interoperability (Interoperabilidad)} es la dimensión que permite evaluar cuanto se puede adaptar el servicio a los estándares de organizaciones reconocidas como WS-I.
+		\end{enumerate}
+
+
+\subsubsection{Descripción de los factores}
+En el capitulo \ref{MarcoConceptual} vemos que una dimension se pude ver como una agrupación de factores de calidad con el mismo propósito. A continuación se definen los factores por dimensión que forman parte de la solución del modelo de calidad presentado.
+\begin{enumerate}
+\item \emph{Security}
+	\begin{enumerate}
+		\item \emph{Confidentiality (Confidencialidad)} es la capacidad de prevenir qué usuarios no autorizados vean o accedan al servicio/mensajes. Usa control de acceso y encriptación.
+		\item \emph{Integrity (Integridad)}  es la capacidad de proteger servicios/mensajes contra modificación,eliminación o creación. Integridad basada en mensaje o basada en transporte.
+		\item \emph{Authentication (Autenticación)} verificar que un objeto es confiable para la transmisión.
+		\item \emph{Access Control (Control de Acceso)} verifica el control sobre el acceso a servicio/mensajes para cada permiso del actor.
+		\item \emph{Non-Repudiation (No Repudio)} asegurar que quien envía o recibe es quien dice ser.
+		\item \emph{Traceability (Trazabilidad)} es el proceso de grabar los eventos relacionados con la seguridad en la comunicación y tomar acciones basadas en las ocurrencias de estos.
+	\end{enumerate}
+\item \emph{Performance and Stability}
+	\begin{enumerate}
+	\item \emph{Response Time (Tiempo de Respuesta)} es el factor que permite evaluar el tiempo de respuesta de los servicios.
+	\item \emph{Throughput (Rendimiento)} describe el la capacidad de respuesta que tiene el servicio en resolver las solicitudes de los clientes.
+	\item \emph{Availability (Disponibilidad)} es el factor que verifica si el servicio se encuentra activo para resolver solicitudes.
+	\item \emph{Accessibility (Accesibilidad)} permite saber si el servicio se encuentra activo en la plataforma para ser consumido por los clientes.
+	\item \emph{Successability (Grado de Éxito)} permite analizar la capacidad de éxito del servicio para resolver solicitudes de los clientes de forma correcta.
+	\end{enumerate}
+\item \emph{Usability and Cost}
+	\begin{enumerate} 
+	\item \emph{Service Cost (Costos de servicio)} es el factor que analiza los costos que aplican al servicio.
+	\item \emph{Usability (Usabilidad)} esta orientado al análisis de los elementos que permitan facilitar el uso de los usuarios que van a utilizar el servicio.
+	\item \emph{Satisfaction (Satifación)} es el factor que evalúa el nivel de conformidad del servicio por parte de los clientes que consumen el mismo.
+	\end{enumerate}
+\item \emph{Interoperability}
+	\begin{enumerate}
+	\item \emph{Standard Adoptability (Adaptabilidad de Estándares)} verifica si el servicio cumple con estándares de interoperabilidad.
+	\end{enumerate}
+\end{enumerate}
+
+\subsubsection{Definición de las métricas de calidad}
+Continuando la construcción del modelo de calidad, ya establecido las dimensiones y factores ahora se establecen por que métricas se va analizar la información.
+Para definir una métrica se definen establecer la semántica, unidad y granularidad de la medida \cite{Calidad:CursoCalidad}.
+En la tabla \ref{tabla:definicion_metricas_per_stab} se encuentra la propuesta de métricas por factor para la dimensión \emph{Performance and Stability}. Algunas métricas tiene mas interés desde el punto de vista del cliente y desde la visión del proveedor del servicio.
+Luego en la tabla \ref{tabla:definicion_metricas_wsi_usa_cost} se encuentran las métricas de las dimensiones  \emph{sability and Cost} e \emph{Interoperability}.
+Finalmente en la tabla \ref{tabla:definicion_metricas_seguridad} están todas las métricas de la dimensión {Security}.
+Como se pueden observar en las tablas mencionadas existen varias métricas que definen distintas formas de medir un mismo factor.
+ \begin{table}[h]
+  \centering
+    \begin{tabular}{ |p{0.18\linewidth} | p{0.20\linewidth} | p{0.45\linewidth} | p{0.15\linewidth} | p{0.20\linewidth}|} 
+    \hline
+     \textbf{Factor} & \textbf{Métrica} & \textbf{Semántica}  & \textbf{Unidad}  & \textbf{Granularidad}  \\
+      \hline
+       \hline
+       \emph{Response Time} & \emph{ Average Response Time (Client)} &Tiempo promedio en el cual resuelve una solicitud al servicio invocado. Es el tiempo que espera el cliente & Segundos & Rango de tiempo\\
+      \hline
+       \emph{ Response Time}&  \emph{Max Response Time (Client) }& Máximo tiempo que llevo resolver una solicitud al servicio invocado  & Segundos & Rango de tiempo\\
+      \hline
+       \emph{Response Time} &  \emph{Min Response Time (Client)}  & Máximo tiempo que llevo resolver una solicitud al servicio invocado & Segundos & Rango de tiempo\\
+      \hline
+       \emph{Response Time} &  \emph{Average Response Time (Provider)} &Tiempo promedio en el cual resuelve una solicitud al servicio invocado sin tener en cuenta los tiempo de latencia que puede sufrir el servicio (ejemplo transformaciones). & Segundos & Rango de tiempo\\
+      \hline
+      \emph{ Response Time}&  \emph{ Max Response Time (Provider)}  & Máximo tiempo que llevo resolver una solicitud al servicio invocado sin tener en cuenta los tiempo de latencia que puede sufrir el servicio  & Segundos & Rango de tiempo\\
+      \hline
+       \emph{Response Time} &  \emph{Min Response Time (Provider)}  & Máximo tiempo que llevo resolver una solicitud al servicio invocado sin tener en cuenta los tiempo de latencia que puede sufrir el servicio & Segundos & Rango de tiempo\\
+      \hline
+        \emph{Throughput} &  \emph{Throughput (Client)}  & Cantidad de solicitados al servicio, por segundo puede resolver & Cantidad transacciones/Seg. & Rango de tiempo\\
+      \hline
+       \emph{Throughput} &  \emph{Throughput (Provider)}  & Cantidad de solicitados al servicio que resuelve al endpoint del proveedor, por segundo & Cantidad transacciones/Seg. & Rango de tiempo\\
+      \hline
+        \emph{Availability} &  \emph{Availability}  & Proporción de tiempo en que el servidor de Web Services está en funcionamiento & Numérico & Rango de tiempo\\
+      \hline
+        \emph{Accessibility} &  \emph{Accessibility}  & Proporción de tiempo en que el se invoca al Web Services y se encuentre disponible para ser invocado & Numérico & Rango de tiempo\\
+       \hline
+        \emph{Successability} &  \emph{Successability} & Proporción de tiempo en que el servicio es invocado y recibe una respuesta sin error por parte del proveedor del mismo. & Numérico & Rango de tiempo\\
+      \hline
+    \end{tabular}
+    \caption{Métricas de la dimensión Performance and Stability}
+    \label{tabla:definicion_metricas_per_stab}
+  \end{table}
+
+ \begin{table}[h]
+  \centering
+    \begin{tabular}{ |p{0.18\linewidth} | p{0.20\linewidth} | p{0.45\linewidth} | p{0.15\linewidth} | p{0.20\linewidth}|} 
+    \hline
+     \textbf{Factor} & \textbf{Métrica} & \textbf{Semántica}  & \textbf{Unidad}  & \textbf{Granularidad}  \\
+      \hline
+      \hline
+       \emph{Service Cost} &  \emph{Price} & Indica si el servicio tiene costo & Booleano & Servicio \\
+       \hline
+       \emph{Service Cost} &  \emph{Cost for Transaction} & Indica a partir de que cantidad de solicitudes al servicio, se le debe cobrar al cliente  & Numérico & Transacciones \\
+       \hline
+       \emph{Service Cost} &  \emph{Penalty} & Precio de sanciones al proveedor por incumplimiento de acuerdos de calidad del servicio (SLA)& Numérico & Servicio \\
+        \hline
+       \emph{Usability} & {Documentation Services} & Indica si el servicio dispone de una buena documentación que permita entender e invocar el servicio & Booleano & Servicio \\
+      \hline
+       \hline
+        \emph{Standard Adoptability} &  \emph{WS-I Basic Profile} & Indica si el servicio cumple con el estándar de perfiles definidos por \emph{Web Services Interoperability Organization} & Boolean & Servicio \\
+       \hline
+       \hline
+    \end{tabular}
+    \caption{Métricas de las dimensiones Interoperability y Usability and Cost }
+    \label{tabla:definicion_metricas_wsi_usa_cost}
+  \end{table}
+
+ \begin{table}[h]
+  \centering
+    \begin{tabular}{ |p{0.18\linewidth} | p{0.20\linewidth} | p{0.45\linewidth} | p{0.15\linewidth} | p{0.20\linewidth}|} 
+    \hline
+     \textbf{Factor} & \textbf{Métrica} & \textbf{Semántica}  & \textbf{Unidad}  & \textbf{Granularidad}  \\
+      \hline
+       \hline
+       \emph{Confidentiality} &  \emph{Confidentiality} & El servicio debe cumplir con la propiedad de seguridad de confidencialidad del mismo & Boolean & Servicio \\
+       \hline
+       \emph{Integrity} &  \emph{Integrity} & El servicio debe cumplir con la propiedad de seguridad de integridad del mismo & Boolean & Servicio \\
+       \hline
+       \emph{Authentication} &  \emph{Authentication} & El servicio debe cumplir con la propiedad de seguridad de autenticación del mismo & Boolean & Servicio \\
+       \hline
+       \emph{Access Control} &  \emph{Access Control} & El servicio debe cumplir con la propiedad de seguridad de control de acceso del mismo & Boolean & Servicio \\
+       \hline
+       \emph{Non-Repudiation} &  \emph{Non-Repudiation} &El servicio debe cumplir con la propiedad de seguridad de no repudio del mismo & Boolean & Servicio \\
+        \hline
+   \emph{Traceability} &  \emph{Traceability} & El servicio debe cumplir con la propiedad de seguridad de trazabilidad del mismo  & Boolean & Servicio \\
+      \hline
+    \end{tabular}
+    \caption{Métricas de la dimensión Seguridad}
+    \label{tabla:definicion_metricas_seguridad}
+  \end{table}
+
+\subsubsection{Definición de los métodos de las métricas de calidad}
+Finalmente se encuentra la ultima etapa del modelo de calidad donde se establece como medir las métricas de calidad. La implementación del método depende de la aplicación en concreto \cite{Calidad:CursoCalidad}. Por lo que dependiendo de la aplicación, se tendrán que establecer las operaciones que permitan calcular las métricas del modelo. En el capitulo \ref{Implementacion} se analiza la forma de implementar las métricas en base a un ESB especifico.

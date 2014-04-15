@@ -141,7 +141,7 @@
 @MISC{UDDI:def,
   author = {Kurt T Stam,Alex O'Ree},
   title = {Apache jUDDI Guide},
-  howpublished = {http://juddi.apache.org/docs/3.2/juddi-guide/pdf/jUDDI_Guide.pdf},
+  howpublished = {http://juddi.apache.org/},
   year = {2014},
   owner = {Juan Pablo},
   timestamp = {2014.04.08}
